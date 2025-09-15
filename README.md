@@ -39,15 +39,15 @@ pip install -r requirements.txt
 Train the three specialist adapters sequentially:
 
 ```bash
-# Stage 1: LoRAbias - Disease feature preservation
+# LoRA_bias - Disease feature preservation
 cd lora_bias
 bash train_lora_bias.sh
 
-# Stage 2: LoRAfair - Demographic fairness
+# LoRA_fair - Demographic fairness
 cd ../lora_fair
 bash train_lora_fair.sh
 
-# Stage 3: LoRASelf-PO - Quality enhancement
+# LoRA_Self-PO - Quality enhancement
 cd ../lora_self_po
 bash train_lora_self_po.sh
 ```
