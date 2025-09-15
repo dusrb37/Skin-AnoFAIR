@@ -47,7 +47,7 @@ bash train_lora_bias.sh
 cd lora_fair
 bash train_lora_fair.sh
 
-# LoRA_Self-PO - Quality enhancement
+# LoRA_Self-PO - Quality enhancement, Generation consistency
 cd lora_self_po
 bash train_lora_self_po.sh
 ```
