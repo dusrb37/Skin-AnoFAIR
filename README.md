@@ -12,14 +12,14 @@ Official implementation of "Skin-AnoFAIR: Anonymization of Facial Skin Disease I
 
 1. **LoRA_bias**: Preserves disease-specific features with demographic conditioning
 2. **LoRA_fair**: Achieves demographic fairness through distributional alignment
-3. **LoRA_Self-PO**: Enhances generation quality via self-supervised preference optimization
+3. **LoRA_Self-PO**: Enhances generation quality and generation consistency via self-supervised preference optimization
 
 
 | Stage | Objective |
 |-------|-----------|
 | [LoRA_bias](./lora_bias/) | Disease feature preservation |
 | [LoRA_fair](./lora_fair/) | Demographic fairness |
-| [LoRA_Self-PO](./lora_self_po/) | Quality refinement |
+| [LoRA_Self-PO](./lora_self_po/) | Quality refinement-Generation consistency |
 
 
 
