@@ -1,6 +1,6 @@
 # Skin-AnoFAIR: Anonymization of Facial Skin Disease Images with Bias Mitigation using Specialist Adapters
 
-Official implementation of "Skin-AnoFAIR: Anonymization of Facial Skin Disease Images with Bias Mitigation using Specialist Adapters" (NeurIPS 2024).
+Official implementation of "Skin-AnoFAIR: Anonymization of Facial Skin Disease Images with Bias Mitigation using Specialist Adapters"
 
 <div align="center">
   <img src="./assets/Fig1.png" width="100%">
