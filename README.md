@@ -8,13 +8,12 @@ Official implementation of "Skin-AnoFAIR: Anonymization of Facial Skin Disease I
 
 ## Overview
 
-**Skin-AnoFAIR** presents a novel approach for anonymizing facial skin disease images while mitigating demographic biases through specialist adapters (LoRA modules). Our three-stage pipeline ensures:
+**Skin-AnoFAIR** presents a novel approach for anonymizing facial skin disease images while mitigating demographic biases through specialist adapters (LoRA modules):
 
 1. **LoRA_bias**: Preserves disease-specific features with demographic conditioning
 2. **LoRA_fair**: Achieves demographic fairness through distributional alignment
 3. **LoRA_Self-PO**: Enhances generation quality via self-supervised preference optimization
 
-## Three-Stage Pipeline
 
 | Stage | Objective |
 |-------|-----------|
