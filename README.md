@@ -34,3 +34,32 @@ pip install peft
 pip install diffusers
 pip install -r requirements.txt
 
+## Quick Start
+Train the three specialist adapters sequentially:
+
+```bash
+# Stage 1: LoRAbias - Disease feature preservation
+cd lora_bias
+bash train_lora_bias.sh
+
+# Stage 2: LoRAfair - Demographic fairness
+cd ../lora_fair
+bash train_lora_fair.sh
+
+# Stage 3: LoRASelf-PO - Quality enhancement
+cd ../lora_self_po
+bash train_lora_self_po.sh
+
+## Data Preparation
+Due to IRB restrictions and patient privacy, we cannot share the clinical facial skin disease dataset. Required data:
+
+Clinical dataset: 6,000 facial skin disease images with annotations
+FairFace dataset: Public dataset for demographic balance (Stage 2 only)
+Pre-trained classifiers: Disease, demographic (gender, race, age)
+
+See individual stage READMEs for detailed specifications.
+
+
+
+
+
