@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Skin-AnoFAIR Stage 2: Train LoRAfair
+# Skin-AnoFAIR: Train LoRAfair
 
 export MODEL_NAME="runwayml/stable-diffusion-v1-5"
 export DATA_DIR="./data/skin-anofair"
@@ -35,7 +35,7 @@ VALIDATION_STEPS=500
 CHECKPOINT_STEPS=500
 
 echo "========================================="
-echo "Skin-AnoFAIR Stage 2: LoRAfair Training"
+echo "Skin-AnoFAIR: LoRAfair Training"
 echo "========================================="
 echo "Base Model: $MODEL_NAME"
 echo "Output Directory: $OUTPUT_DIR"
