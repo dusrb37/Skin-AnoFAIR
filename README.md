@@ -33,6 +33,7 @@ cd skin-anofair
 pip install peft
 pip install diffusers
 pip install -r requirements.txt
+```
 
 ## Quick Start
 Train the three specialist adapters sequentially:
@@ -49,6 +50,7 @@ bash train_lora_fair.sh
 # Stage 3: LoRASelf-PO - Quality enhancement
 cd ../lora_self_po
 bash train_lora_self_po.sh
+```
 
 ## Data Preparation
 Due to IRB restrictions and patient privacy, we cannot share the clinical facial skin disease dataset. Required data:
