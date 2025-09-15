@@ -44,11 +44,11 @@ cd lora_bias
 bash train_lora_bias.sh
 
 # LoRA_fair - Demographic fairness
-cd ../lora_fair
+cd lora_fair
 bash train_lora_fair.sh
 
 # LoRA_Self-PO - Quality enhancement
-cd ../lora_self_po
+cd lora_self_po
 bash train_lora_self_po.sh
 ```
 See individual stage READMEs for detailed specifications.
