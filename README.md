@@ -3,7 +3,7 @@
 Official implementation of "Skin-AnoFAIR: Anonymization of Facial Skin Disease Images with Bias Mitigation using Specialist Adapters"
 
 <div align="center">
-  <img src="./assets/Fig1.png" width="100%">
+  <img src="./assets/Figure1.png" width="100%">
 </div>
 
 ## Overview
