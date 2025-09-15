@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding=utf-8
 """
-Skin-AnoFAIR: Stage 2 - LoRAfair Training
+Skin-AnoFAIR: LoRAfair Training
 """
 
 import argparse
