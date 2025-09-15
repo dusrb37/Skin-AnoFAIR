@@ -36,7 +36,7 @@ pip install -r requirements.txt
 ```
 
 ## Quick Start
-Train the three specialist adapters sequentially:
+### Train the specialist adapters sequentially:
 
 ```bash
 # LoRA_bias - Disease feature preservation
@@ -51,8 +51,14 @@ bash train_lora_fair.sh
 cd ../lora_self_po
 bash train_lora_self_po.sh
 ```
-
 See individual stage READMEs for detailed specifications.
+
+<be>
+
+## Inference
+
+To inference, Checkout - `inference.py` for mode details.
+
 
 
 
