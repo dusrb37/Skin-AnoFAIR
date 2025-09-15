@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Skin-AnoFAIR Stage 3: Train LoRASelf-PO
+# Skin-AnoFAIR: Train LoRASelf-PO
 # Self-supervised preference optimization using clinical dataset only
 
 export MODEL_NAME="runwayml/stable-diffusion-v1-5"
@@ -27,7 +27,7 @@ NUM_HIGH_QUALITY=4    # m: high-quality subset
 TRAIN_BATCH_SIZE=1
 LEARNING_RATE=1e-5
 MAX_STEPS=3000
-BETA=0.3             # DPO beta parameter
+BETA=0.3             # beta parameter
 RANK=32
 ALPHA=16
 
@@ -40,7 +40,7 @@ VALIDATION_STEPS=500
 NUM_VAL_PROMPTS=10
 
 echo "========================================="
-echo "Skin-AnoFAIR Stage 3: LoRASelf-PO Training"
+echo "Skin-AnoFAIR: LoRASelf-PO Training"
 echo "========================================="
 echo "Base Model: $MODEL_NAME"
 echo "Output Directory: $OUTPUT_DIR"
