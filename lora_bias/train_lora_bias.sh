@@ -1,50 +1,73 @@
 #!/bin/bash
-
-# Skin-AnoFAIR Stage 1: Train LoRAbias
+# Skin-AnoFAIR: Train LoRAbias
 # Goal: Learn inherent statistical bias of the dataset
 
-# Model path
 export MODEL_NAME="runwayml/stable-diffusion-v1-5"
+export DATA_DIR="./data/skin-anofair"
 
-# Dataset path
-export TRAIN_DATA_DIR="/path/to/facial_skin_disease_dataset/train"
-
-# Output directory
 OUTPUT_DIR="./models/lora_bias"
 mkdir -p $OUTPUT_DIR
 
+# Dataset paths
+CLINICAL_TRAIN="${DATA_DIR}/clinical/train_metadata.json"
+CLINICAL_VAL="${DATA_DIR}/clinical/val_metadata.json"
+
 # Training parameters
-BATCH_SIZE=8
+TRAIN_BATCH_SIZE=8
 GRADIENT_ACCUMULATION=1
 LEARNING_RATE=5e-5  
-EPOCHS=10
+MAX_STEPS=5000
 RANK=32  
 ALPHA=16
 
-# Validation
+# Generation parameters
+INFERENCE_STEPS=50
+GUIDANCE_SCALE=7.5
+
+# Logging
 VALIDATION_STEPS=200
+CHECKPOINT_STEPS=500
 
 echo "========================================="
-echo "Skin-AnoFAIR Stage 1: LoRAbias Training"
+echo "Skin-AnoFAIR: LoRAbias Training"
 echo "========================================="
-echo "Model: $MODEL_NAME"
-echo "Dataset: $TRAIN_DATA_DIR"
-echo "Output: $OUTPUT_DIR"
-echo "LoRA Rank: $RANK, Alpha: $ALPHA"
-echo "Learning Rate: $LEARNING_RATE"
-echo "Validation every: $VALIDATION_STEPS steps"
+echo "Base Model: $MODEL_NAME"
+echo "Output Directory: $OUTPUT_DIR"
+echo "----------------------------------------"
+echo "Dataset:"
+echo "  Clinical Train: $CLINICAL_TRAIN"
+echo "  Clinical Val: $CLINICAL_VAL"
+echo "----------------------------------------"
+echo "Training Configuration:"
+echo "  Batch size: $TRAIN_BATCH_SIZE"
+echo "  Gradient accumulation: $GRADIENT_ACCUMULATION"
+echo "  Learning rate: $LEARNING_RATE"
+echo "  Max steps: $MAX_STEPS"
+echo "  LoRA Rank: $RANK"
+echo "  LoRA Alpha: $ALPHA"
+echo "----------------------------------------"
+echo "Generation:"
+echo "  Inference steps: $INFERENCE_STEPS"
+echo "  Guidance scale: $GUIDANCE_SCALE"
+echo "----------------------------------------"
+echo "Logging:"
+echo "  Validation every: $VALIDATION_STEPS steps"
+echo "  Checkpointing every: $CHECKPOINT_STEPS steps"
 echo "========================================="
 
 # Launch training
 accelerate launch train_lora_bias.py \
   --pretrained_model_name_or_path=$MODEL_NAME \
-  --train_data_dir=$TRAIN_DATA_DIR \
   --output_dir=$OUTPUT_DIR \
+  --clinical_train_metadata=$CLINICAL_TRAIN \
+  --clinical_val_metadata=$CLINICAL_VAL \
   --mixed_precision="fp16" \
-  --train_batch_size=$BATCH_SIZE \
+  --train_batch_size=$TRAIN_BATCH_SIZE \
   --gradient_accumulation_steps=$GRADIENT_ACCUMULATION \
-  --num_train_epochs=$EPOCHS \
-  --checkpointing_steps=500 \
+  --max_train_steps=$MAX_STEPS \
+  --num_inference_steps=$INFERENCE_STEPS \
+  --guidance_scale=$GUIDANCE_SCALE \
+  --checkpointing_steps=$CHECKPOINT_STEPS \
   --validation_steps=$VALIDATION_STEPS \
   --learning_rate=$LEARNING_RATE \
   --lr_scheduler="constant" \
@@ -66,5 +89,5 @@ accelerate launch train_lora_bias.py \
 
 echo "========================================="
 echo "LoRAbias training completed!"
-echo "Saved to: $OUTPUT_DIR/lora_bias.safetensors"
+echo "Model saved to: $OUTPUT_DIR/lora_bias.safetensors"
 echo "========================================="
