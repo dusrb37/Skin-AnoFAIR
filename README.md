@@ -10,7 +10,7 @@ Official implementation of "Skin-AnoFAIR: Anonymization of Facial Skin Disease I
 
 **Skin-AnoFAIR** presents a novel approach for anonymizing facial skin disease images while mitigating demographic biases through specialist adapters (LoRA modules):
 
-1. **LoRA_bias**: Preserves disease-specific features with demographic conditioning
+1. **LoRA_bias**: captures the natural statistical biases present in the clinical skin disease dataset
 2. **LoRA_fair**: Achieves demographic fairness through distributional alignment
 3. **LoRA_Self-PO**: Enhances generation quality and generation consistency via self-supervised preference optimization
 
