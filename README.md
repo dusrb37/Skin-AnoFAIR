@@ -17,7 +17,7 @@ Official implementation of "Skin-AnoFAIR: Anonymization of Facial Skin Disease I
 
 | Stage | Objective |
 |-------|-----------|
-| [LoRA_bias](./lora_bias/) | Disease feature preservation |
+| [LoRA_bias](./lora_bias/) | Baseline Statistical Bias Learning |
 | [LoRA_fair](./lora_fair/) | Demographic fairness |
 | [LoRA_Self-PO](./lora_self_po/) | Quality refinement-Generation consistency |
 
