@@ -1,4 +1,4 @@
-# LoRA_bias - Disease Feature Preservation with Demographic Conditioning
+# LoRA_bias - Baseline Statistical Bias Learning
 
 First adapter that learns the inherent statistical distribution of the clinical dataset without any conditioning.
 
